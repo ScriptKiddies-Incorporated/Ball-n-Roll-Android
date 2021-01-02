@@ -18,17 +18,21 @@ public class BehaviourMovement : MonoBehaviour
         if (ballPlayerNull != null)
         {
             Ball.AddForce(0, 0, -forwardForce * Time.deltaTime);
-            if (Input.GetKey("a") || Input.GetKey("d") || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+
+            if (Input.touchCount > 0)
             {
-                if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.position.x < Screen.width / 2 && touch.phase != TouchPhase.Began)
                 {
-                    Ball.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+                    Ball.AddForce(1200 * Time.deltaTime, 0, 0);
                 }
-                if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+                else if (touch.position.x > Screen.width / 2 && touch.phase != TouchPhase.Began)
                 {
-                    Ball.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+                    Ball.AddForce(-1200 * Time.deltaTime, 0, 0);
                 }
             }
+
 
             if (Ball.position.y < -50f)
             {
