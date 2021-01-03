@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.04338698, g: 0.044547085, b: 0.059290156, a: 1}
+  m_IndirectSpecularColor: {r: 0.04327238, g: 0.04461724, b: 0.058884095, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1889,6 +1889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526980367}
   - component: {fileID: 1526980366}
+  - component: {fileID: 1526980368}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1922,7 +1923,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1948,6 +1949,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 66.27901, y: 233.23898, z: 114.422005}
+--- !u!114 &1526980368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526980365}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97b7567b479ca4c93c087015d89a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BallPlayerLight: {fileID: 2122226301}
+  offset: {x: 5.41, y: 6.6, z: -9.73}
+  ballPlayerNull1: {fileID: 2122226302}
 --- !u!1001 &1617501123
 PrefabInstance:
   m_ObjectHideFlags: 0
