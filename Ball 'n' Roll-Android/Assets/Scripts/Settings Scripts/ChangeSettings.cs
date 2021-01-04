@@ -11,7 +11,7 @@ public class ChangeSettings : MonoBehaviour
 	public Slider volumeSlider;
 	public Toggle fullscreen;
 	public int value;
-	public string qualityKey = "value";
+	public static string qualityKey = "value";
 
 	private void Start()
 	{ 
@@ -23,7 +23,7 @@ public class ChangeSettings : MonoBehaviour
 	{
 		if (isFullScreen)
 		{
-			//Screen.SetResolution(1920, 1080, true, 60);
+			Screen.SetResolution(LoadSettingsScript.resWidth, LoadSettingsScript.resHeight, true, 60);
 			Screen.fullScreen = true;
 		}
 		else

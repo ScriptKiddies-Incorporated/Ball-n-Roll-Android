@@ -5,12 +5,17 @@ using UnityEngine.Android;
 
 public class LoadSettingsScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	public static int resHeight;
+	public static int resWidth;
+	void Start()
     {
 		//ChangeSettings.SetQuality(PlayerPrefs.GetInt(ChangeSettings.qualityKey));
 		//ChangeSettings.SetVolume(PlayerPrefs.GetFloat("volume"));
-		//SetFullScreen(System.Convert.ToBoolean(PlayerPrefs.GetInt("fullscreen")));
+		//ChangeSettings.SetFullScreen(System.Convert.ToBoolean(PlayerPrefs.GetInt("fullscreen")));
+		resHeight = Display.main.systemHeight;
+	    resWidth = Display.main.systemWidth;
+		Screen.SetResolution(resWidth, resHeight, true, 60);
 		Permission.RequestUserPermission(Permission.ExternalStorageRead);
 		Permission.RequestUserPermission(Permission.ExternalStorageWrite);
 	}
@@ -35,4 +40,4 @@ public class LoadSettingsScript : MonoBehaviour
 		//PlayerPrefs.SetInt("fullscreen", System.Convert.ToInt32(fullscreen.GetComponent<Toggle>().isOn));
 	}
 
-}
+
