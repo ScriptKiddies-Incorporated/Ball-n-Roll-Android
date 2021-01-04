@@ -23,7 +23,7 @@ public class ChangeSettings : MonoBehaviour
 	{
 		if (isFullScreen)
 		{
-			Screen.SetResolution(1920, 1080, true, 60);
+			//Screen.SetResolution(1920, 1080, true, 60);
 			Screen.fullScreen = true;
 		}
 		else
