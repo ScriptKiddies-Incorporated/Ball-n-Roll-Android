@@ -16,17 +16,11 @@ public class LoadGameScene : MonoBehaviour
 
 	private void Awake()
 	{
-		if (!Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
-		{
-			Permission.RequestUserPermission("android.permission.WRITE_EXTERNAL_STORAGE");
-			if (!Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
-			{
-				Application.Quit();
-			}
+		
 			Screen.SetResolution(1920, 1080, true, 60);
 			Screen.fullScreen = true;
-		}
 	}
+	
 	private void Start()
 	{
 	    _GameMusic = Instantiate(GameMusic);
@@ -38,6 +32,6 @@ public class LoadGameScene : MonoBehaviour
 	{
 		Destroy(_GameMusic);
 	}
-
-
 }
+
+
