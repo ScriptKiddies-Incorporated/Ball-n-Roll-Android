@@ -8,6 +8,19 @@ public class LoadSettingsScript : MonoBehaviour
 	// Start is called before the first frame update
 	public static int resHeight;
 	public static int resWidth;
+
+	private void Awake()
+	{
+		if (!Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
+		{
+			Permission.RequestUserPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+			if (!Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
+			{
+				Application.Quit();
+			}
+		}
+		
+	}
 	void Start()
     {
 		//ChangeSettings.SetQuality(PlayerPrefs.GetInt(ChangeSettings.qualityKey));
@@ -15,9 +28,8 @@ public class LoadSettingsScript : MonoBehaviour
 		//ChangeSettings.SetFullScreen(System.Convert.ToBoolean(PlayerPrefs.GetInt("fullscreen")));
 		resHeight = Display.main.systemHeight;
 	    resWidth = Display.main.systemWidth;
-		Screen.SetResolution(resWidth, resHeight, true, 60);
-		Permission.RequestUserPermission(Permission.ExternalStorageRead);
-		Permission.RequestUserPermission(Permission.ExternalStorageWrite);
+		Screen.SetResolution(1920, 1080, true, 60);
+		Screen.fullScreen = true;
 	}
 
     // Update is called once per frame
