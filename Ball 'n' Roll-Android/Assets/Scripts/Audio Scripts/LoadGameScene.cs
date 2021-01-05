@@ -11,7 +11,7 @@ public class LoadGameScene : MonoBehaviour
 	static public GameObject _GameMusic;
 	public void ShowSkinScene()
 	{
-		PlayButtonScript.skinLoader.allowSceneActivation = true;	
+        PlayButtonScript.skinLoader.allowSceneActivation = true;
 	}
 
 	private void Awake()

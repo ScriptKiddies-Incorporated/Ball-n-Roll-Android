@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class GrantPermission : MonoBehaviour
 {
 	// Start is called before the first frame update
-	void Start()
+	public void Start()
 	{
 		if (Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
 		{
-			SceneManager.LoadScene("AudioScene");
+			SceneManager.LoadScene("MainMenu");
 		}
 	}
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class GrantPermission : MonoBehaviour
 	{
 
 	}
-	public void OnClick()
+	public static void OnClick()
 	{
 			Permission.RequestUserPermission("android.permission.WRITE_EXTERNAL_STORAGE");
 		if (!Permission.HasUserAuthorizedPermission("android.permission.WRITE_EXTERNAL_STORAGE"))
@@ -27,7 +27,7 @@ public class GrantPermission : MonoBehaviour
 		}
 		else
 		{
-			SceneManager.LoadScene("AudioScene");
+			SceneManager.LoadScene("MainMenu");
 		}
 	}
 }
