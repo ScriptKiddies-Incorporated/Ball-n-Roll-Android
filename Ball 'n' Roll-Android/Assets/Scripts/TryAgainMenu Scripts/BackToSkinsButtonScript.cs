@@ -18,6 +18,6 @@ public class BackToSkinsButtonScript : MonoBehaviour
         PlaneCollisionScript.exCollCheck = true;
         BehaviourMovement.forwardForce = 400;
         BoostScrpit.speedControl = 1.5f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("SkinSelecter");
     }
 }
